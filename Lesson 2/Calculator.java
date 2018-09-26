@@ -21,19 +21,15 @@ public class Calculator {
 			case "+":
 				System.out.println (firstNumber + secondNumber);
 				break;
-
 			case "-":
 				System.out.println (firstNumber - secondNumber);
 				break;
-
 			case "*":
 				System.out.println (firstNumber * secondNumber);
 				break;
-
 			case "/":
 				System.out.println (firstNumber / secondNumber);
 				break;
-
 			case  "^":
 				int result = 1;
 				for (int i = 1; i <= secondNumber; i++) {
@@ -41,10 +37,11 @@ public class Calculator {
 				}
 				System.out.println (result);
 				break;
-
 			case "%":
 				System.out.println (firstNumber % secondNumber);
 				break;
+			default:
+				System.out.println ("Неверный математически знак.");
 		}	
 	}
 }

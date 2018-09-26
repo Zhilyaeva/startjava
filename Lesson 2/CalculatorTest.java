@@ -2,10 +2,8 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
-		Calculator calculator = new Calculator();
-	        
-	    String response = "нет"; 
-
+		Calculator calculator = new Calculator(); 
+		String response;  
 		Scanner scan = new Scanner(System.in); 
 
 		System.out.println ("Программа запущена.");
@@ -23,7 +21,7 @@ public class CalculatorTest {
 			calculator.solution();
 
 			System.out.print("Вы хотите продолжить?: ");
-			response = scan.next();
+			response = scan.next(); 
 
 		} while (response.equals("да"));
 	}
