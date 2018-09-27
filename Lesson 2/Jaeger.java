@@ -6,61 +6,25 @@ public class Jaeger {
 	private float height;
 	private float weight;
 	private int speed;
-
-	public String getModelName() {
-		return modelName;
-	}
-
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-	}
-
-	public String getMark() {
-		return mark;
-	}
-
-	public void setMark(String mark) {
-		this.mark = mark;
-	}
 	
-	public String getOrigin() {
-		return origin;
-	}
-
-	public void setOrigin(String origin) {
-		this.origin = origin;
-	}
-
-	public float getHeight() {
-		return height;
-	}
-	public void setHeight(float height) {
-		this.height = height;
-	}
-	
-	public float getWeight() {
-		return weight;
-	}
-
-	public void setWeight(float weight) {
-		this.weight = weight;
-	}
-
-	public int getSpeed() {
-	return speed;
-	}
-	
-	public void setSpeed(int speed) {
-		this.speed = speed;
-	}
-
 	public boolean drift() {
-		System.out.println("Режим дрифт запущен!");
-		return true;
+	System.out.println("Режим дрифт запущен!");
+	return true;
 	}
 
 	public void move() {
-		System.out.println("Вы прошли 10 шагов.");
+	System.out.println("Вы прошли 10 шагов.");
 	}
 
+	public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed) {
+	System.out.println("Модель робота: " + modelName);
+	System.out.println("Марка робота: " + mark);
+	System.out.println("Страна производитель: " + origin);
+	System.out.println("Размер робота: " + height + "м");
+	System.out.println("Вес робота: " + weight + "т");
+	System.out.println("Скорость робота: " + speed);
+	drift();
+	move();
+	System.out.println(" ");
+	}
 }
