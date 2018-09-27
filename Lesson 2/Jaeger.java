@@ -49,4 +49,13 @@ public class Jaeger {
 		this.speed = speed;
 	}
 
+	public boolean drift() {
+		System.out.println("Режим дрифт запущен!");
+		return true;
+	}
+
+	public void move() {
+		System.out.println("Вы прошли 10 шагов.");
+	}
+
 }

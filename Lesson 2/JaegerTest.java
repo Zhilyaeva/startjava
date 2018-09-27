@@ -15,7 +15,9 @@ public class JaegerTest {
 		System.out.println("Размер робота: " + jaegerOne.getHeight() + "м");
 		System.out.println("Вес робота: " + jaegerOne.getWeight() + "т");
 		System.out.println("Скорость робота: " + jaegerOne.getSpeed());
-			
+		jaegerOne.drift();
+		jaegerOne.move();
+
 		Jaeger jaegerTwo = new Jaeger();
 		jaegerTwo.setModelName("Tacit Ronin");
 		jaegerTwo.setMark("Mark-1");
@@ -32,5 +34,7 @@ public class JaegerTest {
 		System.out.println("Размер робота: " + jaegerTwo.getHeight() + "м");
 		System.out.println("Вес робота: " + jaegerTwo.getWeight() + "т");
 		System.out.println("Скорость робота: " + jaegerTwo.getSpeed());
+		jaegerTwo.drift();
+		jaegerTwo.move();
 	}
 }
