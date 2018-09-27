@@ -13,7 +13,7 @@ public class Jaeger {
 	}
 
 	public void move() {
-	System.out.println("Вы прошли 10 шагов.");
+		System.out.println("Вы прошли 10 шагов.");
 	}
 
 	public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed) {
