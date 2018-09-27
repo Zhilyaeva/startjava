@@ -10,6 +10,7 @@ public class Jaeger {
 	public String getModelName() {
 		return modelName;
 	}
+
 	public void setModelName(String modelName) {
 		this.modelName = modelName;
 	}
@@ -17,6 +18,7 @@ public class Jaeger {
 	public String getMark() {
 		return mark;
 	}
+
 	public void setMark(String mark) {
 		this.mark = mark;
 	}
@@ -24,6 +26,7 @@ public class Jaeger {
 	public String getOrigin() {
 		return origin;
 	}
+
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
@@ -38,6 +41,7 @@ public class Jaeger {
 	public float getWeight() {
 		return weight;
 	}
+
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
@@ -45,6 +49,7 @@ public class Jaeger {
 	public int getSpeed() {
 	return speed;
 	}
+	
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}

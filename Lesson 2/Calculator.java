@@ -19,29 +19,29 @@ public class Calculator {
 	public void solution() {
 		switch (mathOperation) {
 			case "+":
-				System.out.println (firstNumber + secondNumber);
+				System.out.println(firstNumber + secondNumber);
 				break;
 			case "-":
-				System.out.println (firstNumber - secondNumber);
+				System.out.println(firstNumber - secondNumber);
 				break;
 			case "*":
-				System.out.println (firstNumber * secondNumber);
+				System.out.println(firstNumber * secondNumber);
 				break;
 			case "/":
-				System.out.println (firstNumber / secondNumber);
+				System.out.println(firstNumber / secondNumber);
 				break;
-			case  "^":
+			case "^":
 				int result = 1;
 				for (int i = 1; i <= secondNumber; i++) {
 					result *= firstNumber;
 				}
-				System.out.println (result);
+				System.out.println(result);
 				break;
 			case "%":
-				System.out.println (firstNumber % secondNumber);
+				System.out.println(firstNumber % secondNumber);
 				break;
 			default:
-				System.out.println ("Неверный математически знак.");
+				System.out.println("Неверный математически знак.");
 		}	
 	}
 }
