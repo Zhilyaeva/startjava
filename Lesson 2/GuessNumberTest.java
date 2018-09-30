@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
-    	String solution;
+    	String userAnswer;
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Первый игрок, введите ваше имя: ");
@@ -17,9 +17,9 @@ public class GuessNumberTest {
             
             do {
                 System.out.print("Хотите продолжить? ");
-                solution = scan.nextLine();
-            } while (!solution.equals("да") && !solution.equals("нет"));
+                userAnswer = scan.nextLine();
+            } while (!userAnswer.equals("да") && !userAnswer.equals("нет"));
         
-        } while (solution.equals("да"));
+        } while (userAnswer.equals("да"));
     }
 }
