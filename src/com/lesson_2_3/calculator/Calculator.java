@@ -1,3 +1,5 @@
+package com.lesson_2_3.calculator;
+
 public class Calculator {
 
 	private float firstNumber;

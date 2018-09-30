@@ -1,3 +1,5 @@
+package com.lesson_1.game;
+
 import java.util.Scanner; // Было в задачах в материалах про ветвление в Java
 
 public class MyFirstGame {

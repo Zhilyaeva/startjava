@@ -1,3 +1,5 @@
+package com.lesson_2_3.robot;
+
 public class JaegerTest {
 	public static void main(String[] args) {
 		Jaeger jaegerOne = new Jaeger("Horizon Brave", "Mark-1", "China", 72.54f, 7.890f, 8);
