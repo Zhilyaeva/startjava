@@ -1,38 +1,39 @@
 package com.lesson_2_3_4.calculator;
 
-import java.util.Scanner;
-
 public class Calculator {
 
-	Scanner scanner = new Scanner(System.in);
+    private String inputExpression;
 
-	public void start() {
+    public Calculator(String inputExpression) {
+        this.inputExpression = inputExpression;
+    }
 
-		System.out.print("Введите математическое выражение(например: 1 + 1): ");
+    public void solution() {
+        String[] mathExpression = inputExpression.split(" ");
+        int firstNumber = Integer.parseInt(mathExpression[0]);
+        int secondNumber = Integer.parseInt(mathExpression[2]);
 
-		String[] mathExpression = scanner.nextLine().split(" ");
-
-		switch (mathExpression[1]) {
-			case "+":
-				System.out.println(Float.parseFloat(mathExpression[0]) + Float.parseFloat(mathExpression[2]));
-				break;
-			case "-":
-				System.out.println(Float.parseFloat(mathExpression[0]) - Float.parseFloat(mathExpression[2]));
-				break;
-			case "*":
-				System.out.println(Float.parseFloat(mathExpression[0]) * Float.parseFloat(mathExpression[2]));
-				break;
-			case "/":
-				System.out.println(Float.parseFloat(mathExpression[0]) / Float.parseFloat(mathExpression[2]));
-				break;
-			case "^":
-				System.out.println(Math.pow(Float.parseFloat(mathExpression[0]), Float.parseFloat(mathExpression[2])));
-				break;
-			case "%":
-				System.out.println(Float.parseFloat(mathExpression[0]) % Float.parseFloat(mathExpression[2]));
-				break;
-			default:
-				System.out.println("Данное выражение не поддерживается");
-		}	
-	}
+        switch (mathExpression[1]) {
+            case "+":
+                System.out.println(Math.addExact(firstNumber, secondNumber));
+                break;
+            case "-":
+                System.out.println(Math.subtractExact(firstNumber, secondNumber));
+                break;
+            case "*":
+                System.out.println(Math.multiplyExact(firstNumber, secondNumber));
+                break;
+            case "/":
+                System.out.println((float) firstNumber / secondNumber);
+                break;
+            case "^":
+                System.out.println(Math.pow(firstNumber, secondNumber));
+                break;
+            case "%":
+                System.out.println(Math.floorMod(firstNumber, secondNumber));
+                break;
+            default:
+                System.out.println("Данное выражение не поддерживается");
+        }
+    }
 }
