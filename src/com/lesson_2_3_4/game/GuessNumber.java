@@ -27,18 +27,18 @@ public class GuessNumber {
 //          System.out.println("Попытка №:" + (i + 1));
             inputNumber(playerOne);
             inputNumber(playerTwo);
-            selectNumber(playerOne);
-            selectNumber(playerTwo);
-            if (isWin){
-                endGame(playerOne);
-                endGame(playerTwo);
+            checkInput(playerOne);
+            checkInput(playerTwo);
+            if (isWin) {
+                printResult(playerOne);
+                printResult(playerTwo);
                 break;
             }
         }
 
         if (attempt == 9) {
-            endGame(playerOne);
-            endGame(playerTwo);
+            printResult(playerOne);
+            printResult(playerTwo);
         }
     }
 
@@ -47,7 +47,7 @@ public class GuessNumber {
         player.numbers[attempt] = scan.nextInt();
     }
 
-    private void selectNumber(Player player) {
+    private void checkInput(Player player) {
         if (player.numbers[attempt] == compNumber) {
             System.out.println(player.getName() + ", Вы угадали с " + (attempt + 1) + " попытки, это число: " + compNumber);
             isWin = true;
@@ -60,11 +60,10 @@ public class GuessNumber {
         }
     }
 
-    private void endGame(Player player) {
+    private void printResult(Player player) {
         if (isWin) {
             System.out.println("Выбранные числа игрока " +  player.getName() + ": " + Arrays.toString(Arrays.copyOf(player.numbers, attempt + 1)));
-        }
-        else {
+        } else {
             System.out.println(player.getName() + ", у вас закончились попытки :(");
             System.out.println("Выбранные числа игрока " +  player.getName() + ": " + Arrays.toString(Arrays.copyOf(player.numbers, attempt + 1)));
         }

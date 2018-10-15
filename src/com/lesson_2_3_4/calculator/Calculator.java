@@ -8,7 +8,7 @@ public class Calculator {
         this.inputExpression = inputExpression;
     }
 
-    public void solution() {
+    public void calculate() {
         String[] mathExpression = inputExpression.split(" ");
         int firstNumber = Integer.parseInt(mathExpression[0]);
         int secondNumber = Integer.parseInt(mathExpression[2]);

@@ -11,7 +11,5 @@ public class Player {
         return this.name;
     }
 
-    public int numbers[];{
-        numbers = new int[10];
-    }
+    public int[] numbers = new int[10];
 }
