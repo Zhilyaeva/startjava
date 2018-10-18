@@ -18,7 +18,7 @@ public class GuessNumber {
 
     public void start() {
         compNumber = (int) (Math.random() * 101);
-//        System.out.println("Загаданное компьютером число: " + compNumber);
+        System.out.println("Загаданное компьютером число: " + compNumber);
         System.out.println("У вас есть 10 попыток.");
         isWin = false;
 
@@ -61,11 +61,13 @@ public class GuessNumber {
     }
 
     private void printResult(Player player) {
-        if (isWin) {
-            System.out.println("Выбранные числа игрока " +  player.getName() + ": " + Arrays.toString(Arrays.copyOf(player.numbers, attempt + 1)));
-        } else {
+        if (attempt==9) {
             System.out.println(player.getName() + ", у вас закончились попытки :(");
-            System.out.println("Выбранные числа игрока " +  player.getName() + ": " + Arrays.toString(Arrays.copyOf(player.numbers, attempt + 1)));
+            }
+        System.out.print("Выбранные числа игрока " +  player.getName() + ": ");
+        int[] resultNumbers = Arrays.copyOf(player.numbers, attempt + 1);
+        for (int i = 0; i < resultNumbers.length; i++) {
+            System.out.print(resultNumbers[i] + " ");
         }
         Arrays.fill(player.numbers, 0);
     }
