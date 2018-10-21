@@ -10,6 +10,7 @@ public class GuessNumber {
     private boolean isWin;
     private int attempt;
     private Scanner scan = new Scanner(System.in);
+    private final static int count_attempt = 10;
 
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
@@ -18,13 +19,13 @@ public class GuessNumber {
 
     public void start() {
         compNumber = (int) (Math.random() * 101);
-//        System.out.println("Загаданное компьютером число: " + compNumber);
+        System.out.println("Загаданное компьютером число: " + compNumber);
         System.out.println("У вас есть 10 попыток.");
         isWin = false;
 
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i <= count_attempt; i++) {
             attempt = i;
-//          System.out.println("Попытка №:" + i);
+          System.out.println("Попытка №:" + i);
             inputNumber(playerOne);
             inputNumber(playerTwo);
             checkInput(playerOne);
@@ -49,12 +50,14 @@ public class GuessNumber {
     }
 
     private void checkInput(Player player) {
-        if (player.getArrayNumbers()[attempt - 1] == compNumber) {
+        int checkNumber = player.getArrayNumbers()[attempt - 1];
+
+        if (checkNumber == compNumber) {
             System.out.println(player.getName() + ", Вы угадали с " + (attempt) + " попытки, это число: " + compNumber);
             isWin = true;
-        } else if (player.getArrayNumbers()[attempt - 1] < compNumber && player.getArrayNumbers()[attempt - 1] >= 0) {
+        } else if (checkNumber < compNumber && checkNumber >= 0) {
             System.out.println(player.getName() + ", введенное Вами число меньше загаданного компьютером");
-        } else if (player.getArrayNumbers()[attempt - 1] > compNumber && player.getArrayNumbers()[attempt - 1] <= 100) {
+        } else if (checkNumber > compNumber && checkNumber <= 100) {
             System.out.println(player.getName() + ", введенное Вами число больше загаданного компьютером");
         } else {
             System.out.println(player.getName() + ", сосиска, не пытайся меня обмануть!");
@@ -64,8 +67,8 @@ public class GuessNumber {
     private void printResultArray(Player player) {
         System.out.print("Выбранные числа игрока " +  player.getName() + ": ");
         int[] resultNumbers = Arrays.copyOf(player.getArrayNumbers(), attempt);
-        for (int i = 0; i < resultNumbers.length; i++) {
-            System.out.print(resultNumbers[i] + ", ");
+        for (int resultNumber : resultNumbers) {
+            System.out.print(resultNumber + ", ");
         }
         Arrays.fill(player.getArrayNumbers(), 0);
     }

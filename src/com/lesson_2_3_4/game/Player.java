@@ -4,15 +4,15 @@ public class Player {
     private String name;
     private int[] arrayNumbers = new int[10];
 
-    Player(String name) {
+    public Player(String name) {
         this.name = name;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    int[] getArrayNumbers() {
+    public int[] getArrayNumbers() {
         return arrayNumbers;
     }
 }
