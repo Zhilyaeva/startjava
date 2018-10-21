@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class CalculatorTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Calculator calculator = new Calculator(scan.nextLine());
+        Calculator calculator = new Calculator();
         String answer;
 
         System.out.println ("Программа запущена.");
 
         do {
             System.out.print("Введите математическую операцию (например: 2 + 2): ");
+            calculator.setInputExpression(scan.nextLine());
             calculator.calculate();
 
             do {

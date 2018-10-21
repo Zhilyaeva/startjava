@@ -4,7 +4,7 @@ public class Calculator {
 
     private String inputExpression;
 
-    public Calculator(String inputExpression) {
+    void setInputExpression(String inputExpression) {
         this.inputExpression = inputExpression;
     }
 

@@ -18,57 +18,55 @@ public class GuessNumber {
 
     public void start() {
         compNumber = (int) (Math.random() * 101);
-        System.out.println("Загаданное компьютером число: " + compNumber);
+//        System.out.println("Загаданное компьютером число: " + compNumber);
         System.out.println("У вас есть 10 попыток.");
         isWin = false;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             attempt = i;
-//          System.out.println("Попытка №:" + (i + 1));
+//          System.out.println("Попытка №:" + i);
             inputNumber(playerOne);
             inputNumber(playerTwo);
             checkInput(playerOne);
             checkInput(playerTwo);
             if (isWin) {
-                printResult(playerOne);
-                printResult(playerTwo);
                 break;
             }
         }
 
-        if (attempt == 9) {
-            printResult(playerOne);
-            printResult(playerTwo);
+        if (attempt == 10) {
+            System.out.println(playerOne.getName() + ", у вас закончились попытки :(");
+            System.out.println(playerTwo.getName() + ", у вас закончились попытки :(");
         }
+
+        printResultArray(playerOne);
+        printResultArray(playerTwo);
     }
 
     private void inputNumber(Player player) {
         System.out.print(player.getName() + ", введите число от 0 до 100: ");
-        player.numbers[attempt] = scan.nextInt();
+        player.getArrayNumbers()[attempt - 1] = scan.nextInt();
     }
 
     private void checkInput(Player player) {
-        if (player.numbers[attempt] == compNumber) {
-            System.out.println(player.getName() + ", Вы угадали с " + (attempt + 1) + " попытки, это число: " + compNumber);
+        if (player.getArrayNumbers()[attempt - 1] == compNumber) {
+            System.out.println(player.getName() + ", Вы угадали с " + (attempt) + " попытки, это число: " + compNumber);
             isWin = true;
-        } else if (player.numbers[attempt] < compNumber && player.numbers[attempt] >= 0) {
+        } else if (player.getArrayNumbers()[attempt - 1] < compNumber && player.getArrayNumbers()[attempt - 1] >= 0) {
             System.out.println(player.getName() + ", введенное Вами число меньше загаданного компьютером");
-        } else if (player.numbers[attempt] > compNumber && player.numbers[attempt] <= 100) {
+        } else if (player.getArrayNumbers()[attempt - 1] > compNumber && player.getArrayNumbers()[attempt - 1] <= 100) {
             System.out.println(player.getName() + ", введенное Вами число больше загаданного компьютером");
         } else {
             System.out.println(player.getName() + ", сосиска, не пытайся меня обмануть!");
         }
     }
 
-    private void printResult(Player player) {
-        if (attempt==9) {
-            System.out.println(player.getName() + ", у вас закончились попытки :(");
-            }
+    private void printResultArray(Player player) {
         System.out.print("Выбранные числа игрока " +  player.getName() + ": ");
-        int[] resultNumbers = Arrays.copyOf(player.numbers, attempt + 1);
+        int[] resultNumbers = Arrays.copyOf(player.getArrayNumbers(), attempt);
         for (int i = 0; i < resultNumbers.length; i++) {
-            System.out.print(resultNumbers[i] + " ");
+            System.out.print(resultNumbers[i] + ", ");
         }
-        Arrays.fill(player.numbers, 0);
+        Arrays.fill(player.getArrayNumbers(), 0);
     }
 }
