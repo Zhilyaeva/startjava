@@ -19,7 +19,7 @@ public class GuessNumber {
 
     public void start() {
         compNumber = (int) (Math.random() * 101);
-        System.out.println("Загаданное компьютером число: " + compNumber);
+       // System.out.println("Загаданное компьютером число: " + compNumber);
         System.out.println("У вас есть 10 попыток.");
         isWin = false;
 
